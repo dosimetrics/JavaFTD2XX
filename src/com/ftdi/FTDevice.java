@@ -465,7 +465,7 @@ public class FTDevice {
      */
     public void setLatencyTimer(short timer) throws FTD2XXException,
             IllegalArgumentException {
-        if (!((timer >= 2) && (timer < 255))) {
+        if (!((timer >= 2) && (timer <= 255))) {
             throw new IllegalArgumentException("Valid range is 2 - 255!");
         }
         ensureFTStatus(ftd2xx.FT_SetLatencyTimer(ftHandle, (byte) timer));
