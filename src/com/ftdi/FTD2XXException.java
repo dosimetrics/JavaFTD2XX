@@ -31,7 +31,9 @@ import java.io.IOException;
  */
 public class FTD2XXException extends IOException {
 
-    public FTD2XXException(FT_STATUS ftStatus) {
+	private static final long serialVersionUID = 1L;
+
+	public FTD2XXException(FT_STATUS ftStatus) {
         super("D2XX error, ftStatus:" + ftStatus);
     }
 

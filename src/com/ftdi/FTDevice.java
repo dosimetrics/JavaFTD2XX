@@ -750,7 +750,6 @@ public class FTDevice {
     }
 
     @Override
-    @SuppressWarnings("FinalizeDeclaration")
     protected void finalize() throws Throwable {
         try {
             close();
