@@ -113,6 +113,22 @@ public class FTDevice {
     public int getFlag() {
         return flag;
     }
+    
+    /**
+     * determines if the device is in use by anybody
+     * @return
+     */
+    public boolean isInUse() {
+    	return ((flag & FTD2XX.FT_FLAGS_OPENED) != 0);
+    }
+
+    /**
+     * determines if the device was opened already
+     * @return 
+     */
+    public boolean isOpen() {
+    	return this.open;
+    }
 
     @Override
     public boolean equals(Object obj) {
