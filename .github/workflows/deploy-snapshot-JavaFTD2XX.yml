@@ -3,10 +3,14 @@
 
 name: Deploy SNAPSHOT
 
+on:
+  release:
+    types: [prereleased]
+
 jobs:
   build:
 
-    runs-on: linux-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
