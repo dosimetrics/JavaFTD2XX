@@ -23,7 +23,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub OWNER Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/dosimetrics/JavaFTD2XX</url>
+			<url>https://maven.pkg.github.com/dosimetrics</url>
 		</repository>
 	</distributionManagement>
 
