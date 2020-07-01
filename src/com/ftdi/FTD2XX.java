@@ -46,9 +46,12 @@ interface FTD2XX extends Library {
         }
 
         static String getNative() {
-        	// for now we assume we are on windows, and the driver is installed already
-            if (Platform.isWindows()) {
+            if (Platform.isWindows() && Platform.isIntel() && Platform.is64Bit()) {
+            	return "ftd2xx64.dll";
+            } else if (Platform.isWindows() && Platform.isIntel() && !Platform.is64Bit()) {
             	return "ftd2xx.dll";
+            } else if (Platform.isLinux()) {
+            	return "libftd2xx.so.1.4.8";
             } else {
             	 throw new Error("OS not supported");
             }
