@@ -3,6 +3,7 @@
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
     <!-- based on: https://stackoverflow.com/questions/57711558/deploy-to-github-package-registry-from-github-action -->
+    <interactiveMode>false</interactiveMode>
 
     <activeProfiles>
         <activeProfile>github</activeProfile>
