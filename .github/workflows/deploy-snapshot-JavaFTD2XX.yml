@@ -23,4 +23,4 @@ jobs:
     - name: Build with Maven and deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: mvn --settings .github/settings.xml -P update-native-libs package install deploy
+      run: mvn -Dmaven.test.skip=true --settings .github/settings.xml -P update-native-libs clean package install deploy
