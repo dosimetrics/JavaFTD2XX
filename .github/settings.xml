@@ -26,7 +26,7 @@
                 <repository>
                     <id>github</id>
                     <name>GitHub dosimetrics Apache Maven Packages</name>
-                    <url>https://maven.pkg.github.com/dosimetrics</url>
+                    <url>https://maven.pkg.github.com/dosimetrics/JavaFTD2XX</url>
                 </repository>
             </repositories>
         </profile>
