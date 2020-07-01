@@ -19,6 +19,14 @@
 		<driver.linux.armv7hf.url>https://www.ftdichip.com/Drivers/D2XX/Linux/libftd2xx-arm-v7-hf-1.4.8.gz</driver.linux.armv7hf.url>
 	</properties>
 
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub OWNER Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/dosimetrics/JavaFTD2XX</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<testSourceDirectory>tst</testSourceDirectory>
