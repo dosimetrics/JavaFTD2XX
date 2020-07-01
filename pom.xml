@@ -103,25 +103,6 @@
 
 		<plugins>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>add-native</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>add-source</goal>
-						</goals>
-						<configuration>
-							<sources>
-								<source>${project.basedir}/native</source>
-							</sources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
@@ -201,7 +182,7 @@
 						<executions>
 							<execution>
 								<id>download-files</id>
-								<phase>process-resources</phase>
+								<phase>generate-resources</phase>
 								<goals>
 									<goal>run</goal>
 								</goals>
@@ -217,15 +198,12 @@
 											dir="${project.build.directory}/dlls/linux.x86.unzip" />
 										<mkdir
 											dir="${project.build.directory}/dlls/linux.arm.unzip" />
-										<mkdir
-											dir="${project.build.directory}/dlls/darwin.unzip" />
 
 										<mkdir dir="${project.basedir}/native/win32-x86-64" />
 										<mkdir dir="${project.basedir}/native/win32-x86" />
 										<mkdir dir="${project.basedir}/native/linux-x86-64" />
 										<mkdir dir="${project.basedir}/native/linux-x86" />
 										<mkdir dir="${project.basedir}/native/linux-arm" />
-										<mkdir dir="${project.basedir}/native/darwin" />
 
 										<get src="${driver.windows.x64.url}"
 											dest="${project.build.directory}/dlls/windows.x64.zip"
@@ -311,6 +289,24 @@
 						</executions>
 					</plugin>
 
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>build-helper-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>add-native</id>
+								<phase>process-resources</phase>
+								<goals>
+									<goal>add-source</goal>
+								</goals>
+								<configuration>
+									<sources>
+										<source>${project.basedir}/native</source>
+									</sources>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
 				</plugins>
 			</build>
 		</profile>
